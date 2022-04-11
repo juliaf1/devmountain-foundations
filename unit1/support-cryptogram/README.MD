@@ -2,10 +2,12 @@
 ### Week 1
 ### Support Cryptogram
 
-#### :boat: Theme
-Your main avenues for support
+---
 
-#### :dart: Tips
+#### :dart: Instructions
+Create a txt file and solve the cryptogram.
+
+Theme: Your main avenues for support
 
 ```
 A = Q
@@ -16,7 +18,7 @@ Q = N
 Y = O
 ```
 
-#### :sparkles: Solution and final thoughts
+#### :sparkles: Solution
 Solution for the first class setup exercise:
 
 ```
