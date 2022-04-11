@@ -38,6 +38,7 @@ For extra credit, implement the following to your program:
 #### :sparkles: Solution
 Solution implemented solves all exercise's requirements, including extra credits on the Password Validator.
 
+#### :robot: Demo
 After cloning the project, run `node password.js` on a terminal window to see the program running.
 
 If the program successfully starts, you should see:
