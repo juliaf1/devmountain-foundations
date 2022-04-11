@@ -16,7 +16,7 @@ Implement a prefix notation calculator in the file called calc.js. You need to h
 We’ve provided some code that allows you to access the numbers and the math symbol that the user provided on the command line. Review the code carefully in calc.js. Research any syntax that looks unfamiliar to you.
 
 #### :sparkles: Solution
-I've implemented two different code solutions for the callenge, those can be found on [v1](https://github.com/juliaf1/calculator/tree/v1) and [v2](https://github.com/juliaf1/calculator/tree/v2) branches. Both solutions handle as many operands as user inputs for Addition, Subtraction, Multiplication, Division, Modulus and Square Root operations.
+I've implemented two different code solutions for the callenge, those can be found on [main](https://github.com/juliaf1/devmountain-challenges/blob/main/unit1/calculator/calc.js) and [calculator/v2](https://github.com/juliaf1/devmountain-challenges/blob/calculator/v2/unit1/calculator/calc.js) branches. Both solutions handle as many operands as user inputs for Addition, Subtraction, Multiplication, Division, Modulus and Square Root operations.
 User is expected to input the operator and operands they want to calculate in prefix manner, as shown in the example:
 
 ```
