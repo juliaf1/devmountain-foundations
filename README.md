@@ -1,7 +1,7 @@
 # Devmountain Foundations
 ### Welcome!
 This repository contains my solutions to all exercises covered during the 16-weeks Devmountain Foundations bootcamp.
-All challenges are grouped by unit, and final assessments can be found on their respectives unit folder.
+All challenges are grouped by unit, and final assessments can be found on their respectives units folder.
 
 ---
 
