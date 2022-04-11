@@ -9,7 +9,7 @@
     It should be a string containing your best definition of what Git is.
 */
 
-//CODE HERE
+const gitDefinition = `git is a version control system used to manage code and keep track of changes in a repository`
 
 //////////////////PROBLEM 2////////////////////
 /*
@@ -17,7 +17,7 @@
     It should be a string containing your best definition of what GitHub is.
 */
 
-//CODE HERE
+const gitHubDefinition = `github is a website/service people use to host files, mostly programming projects`
 
 //////////////////PROBLEM 3////////////////////
 /*
@@ -25,7 +25,7 @@
     It should be a string containing your best definition of what 'git init' does.
 */
 
-//CODE HERE
+const gitInitDefinition = `git init creates a new repository`
 
 //////////////////PROBLEM 4////////////////////
 /*
@@ -33,7 +33,7 @@
     It should be a string containing your best definition of what 'git clone' does.
 */
 
-//CODE HERE
+const gitCloneDefinition = `git clone copies a targeted repository`
 
 //////////////////PROBLEM 5////////////////////
 /*
@@ -41,7 +41,7 @@
     It should be a string containing your best definition of what 'git status' does.
 */
 
-//CODE HERE
+const gitStatusDefinition = `git status displays files changed and in the staging area`
 
 //////////////////PROBLEM 6////////////////////
 /*
@@ -52,7 +52,8 @@
     It should be a string containing the code to add all files.
 */
 
-//CODE HERE
+const gitAddDefinition = `git add promotes changed files to the staging area, where they can be commited`
+const gitAddCode = `git add .`
 
 //////////////////PROBLEM 7////////////////////
 /*
@@ -63,8 +64,8 @@
     It should be a string containing the code to commit using the message "initial commit".
 */
 
-//CODE HERE
-
+const gitCommitDefinition = `git commit takes a snapshot of the staged changes and saves them with a message`
+const gitCommitCode = `git commit -m 'initial commit'`
 
 //////////////////PROBLEM 8////////////////////
 /*
@@ -72,4 +73,4 @@
     It should be a string containing your best definition of what 'git push' does.
 */
 
-//CODE HERE
+const gitPushDefinition = `git push transfers code from a local repo to a remote repo`
