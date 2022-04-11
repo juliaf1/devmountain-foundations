@@ -5,7 +5,7 @@
 ---
 
 #### :dart: Instructions
-Open the lab.js file, and attempt as many problems as you can.
+Open the `lab.js` file, and attempt as many problems as you can.
 The goal is to get through all of the starting questions, and then as many of the intermediate and advanced questions as possible. If you get through the intermediate questions, challenge yourself with the advanced questions. The advanced questions will cover topics not taught in class. This is intentional. Use resources online to help you figure out the solutions.
 
 #### :sparkles: Solution
