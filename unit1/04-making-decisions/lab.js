@@ -62,8 +62,8 @@ let rain = true;
   Come up with your own clothing suggestions based on those temperature parameters when it is not raining.
 */
 
-let hotWeather = temperature > 80
-let chillWeather = temperature > 60 && temperature < 80
+let hotWeather = temperature >= 80
+let chillWeather = temperature >= 60 && temperature < 80
 
 if (hotWeather) {
   message = 'Wear a t-shirt';
