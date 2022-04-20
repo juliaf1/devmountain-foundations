@@ -7,6 +7,7 @@ var arr = [10,20,30,40,50,60]
 */
 
 let firstItem = arr[0];
+firstItem = arr.at(0);
 
 ////////// PROBLEM 2 //////////
 /*
@@ -30,6 +31,12 @@ for (let i = 0; i < family.length; i++) {
   console.log(family[i]);
 };
 
+family.forEach(name => console.log(name));
+
+for (let name of family) {
+  console.log(name);
+}
+
 ////////// PROBLEM 4 //////////
 
 // Do not edit the code below.
@@ -42,7 +49,7 @@ let evensArr = []
 */
 
 for (let i = 0; i < nums.length; i++) {
-  if (nums[i] % 2 !== 0) {
+  if (nums[i] % 2 === 0) {
     evensArr.push(nums[i]);
   };
 };
