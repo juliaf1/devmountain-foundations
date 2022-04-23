@@ -9,3 +9,5 @@ All challenges are grouped by unit, and final assessments can be found on their 
 Foundations course has 9 units, whose descriptions will be added as they are completed.
 
 1. `Software Development`: Covers software development methodologies, focusing on the core activities of agile software development, and basic coding concepts, such as variables, integers, strings, floats, booleans and control flow.
+
+2. `Object Orientation`: Covers functions in Javascript and Object Orientation theory.
