@@ -8,7 +8,7 @@ const addToZero = array => {
 
   array.forEach((item) => {
     for(let i = 0; i < array.length; i++) {
-      if (array.indexOf(item) != i && Math.abs(array[i]) === Math.abs(item)) {
+      if (array.indexOf(item) != i && +array[i] + +item === 0) {
         adds = true;
         break;
       };
