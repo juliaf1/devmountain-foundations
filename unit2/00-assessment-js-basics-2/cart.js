@@ -33,10 +33,8 @@ const cart = [
     }
 ]
 
-//CODE HERE
-
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+const summedPrice = cart.reduce((total, currentFood) => total + currentFood.price, 0)
+console.log(summedPrice);
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -53,9 +51,13 @@ const cart = [
     decimals, for example: .06 for a 6% tax.
 */
 
-//CODE HERE
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    cartTotal = cartTotal * (1 + tax);
+    cartTotal = cartTotal - couponValue;
+    return cartTotal;
+};
 
-
+console.log(calcFinalPrice(summedPrice, 5, .1));
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -80,6 +82,13 @@ const cart = [
 /*
     TEXT ANSWER HERE
 
+    Customer object needs:
+    - Name - String
+    - Birth Date - String
+    - Phone - String
+    - Email - String
+    - Address - Object
+
 */
 
 /*
@@ -87,4 +96,12 @@ const cart = [
     guidelines.
 */
 
-//CODE HERE
+class Customer {
+    constructor(name, birthDate, phone, email, address) {
+        this.name = name;
+        this.birthDate = birthDate;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+    };
+};
