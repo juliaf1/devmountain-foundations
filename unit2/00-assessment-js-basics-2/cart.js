@@ -97,11 +97,12 @@ console.log(calcFinalPrice(summedPrice, 5, .1));
 */
 
 class Customer {
-    constructor(name, birthDate, phone, email, address) {
+    constructor(name, birthDate, phone, email, address, id) {
         this.name = name;
         this.birthDate = birthDate;
         this.phone = phone;
         this.email = email;
         this.address = address;
+        this.customerId = id;
     };
 };
