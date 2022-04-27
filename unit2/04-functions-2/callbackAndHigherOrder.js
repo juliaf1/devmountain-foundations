@@ -99,14 +99,27 @@ contains(names, 'Colt', result => {
 
 const uniq = (array, cb) => {
   array = [...array];
-  array.forEach(item => {
+  array.forEach((item, index) => {
     for(let i = 0; i < array.length; i++) {
-      if (array.indexOf(item) != i && array[i] === item) {
+      if (index != i && array[i] === item) {
         array.splice(i, 1);
       };
     };
   });
-  cb(array);
+  return cb(array);
+};
+
+const uniq2 = (array, cb) => {
+  // Review solution at April 26
+  array = [...array];
+  for(let i = 0; i < array.length; i++) {
+    for(let j = 0; j < array.length; j++) {
+      if (i != j && array[j] === array[i]) {
+        array.splice(j, 1);
+      };
+    };
+  };
+  return cb(array);
 };
 
 /*
@@ -119,6 +132,11 @@ const uniq = (array, cb) => {
 uniq(names, uniqArr => {
   console.log(`The new names array with all the duplicate items removed is ${uniqArr}`);
 });
+
+const uniqArrayLogger = arr => console.log(`The new names array with all the duplicate items removed is ${arr}`);
+
+uniq(names, uniqArrayLogger);
+uniq2(names, uniqArrayLogger);
 
 ////////// PROBLEM 6 //////////
 
