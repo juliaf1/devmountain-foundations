@@ -1,0 +1,61 @@
+.bg-light-100 {
+  background-color: #EFEFEF;
+}
+
+.bg-light-200 {
+  background-color: #D8D8D8;
+}
+
+.bg-dark-100 {
+  background-color: #444444;
+}
+
+.bg-dark-800 {
+  background-color: #222222;
+}
+
+.w-full {
+  /* full width */
+  width: 100%;
+}
+
+.h-full {
+  /* full height */
+  height: 100%;
+}
+
+.w-500 {
+  /* 500px width */
+  width: 500px;
+}
+
+.h-100 {
+  /* 100px height */
+  height: 100px;
+}
+
+.hr-full {
+  height: calc(100vh - 100px);
+}
+
+.hr-10 {
+  /* relative height 10% */
+  height: 10%;
+}
+
+.hr-90 {
+  /* relative height 90% */
+  height: 90%;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.m-auto {
+  margin: 0 auto;
+}
+
+.px-100 {
+  padding: 0 100px;
+}
