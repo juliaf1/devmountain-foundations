@@ -29,7 +29,7 @@ Come up with a name for the restaurant. (If you can’t think of one, just name 
 - Identify 3 software or technology companies the interest you.
 - Conduct research to figure out some or all of the elements of each company’s technology stack. Check job openings/job descriptions, engineering blogs, and anything else that may have information about what the company uses to write/build it’s software products.
 
-Research can be found [here](00-assessment-js-basics-2/company-research.md).
+Research can be found [here](./company-research.md).
 
 #### :sparkles: Solution
 Solution implemented solves all exercise's requirements, including extra credits on the Company Stack Research.
