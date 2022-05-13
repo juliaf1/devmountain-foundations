@@ -4,8 +4,7 @@ const printDigits = (num) => {
   let printedNum = null;
   let operator = 10;
   while (numTracker != num) {
-    printedNum = (num % operator)  / (operator / 10);
-    printedNum = Math.floor(printedNum);
+    printedNum = Math.floor((num % operator)  / (operator / 10));
     console.log(printedNum);
     numTracker = num % operator;
     operator = operator * 10;
