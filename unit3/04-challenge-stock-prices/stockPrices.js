@@ -1,9 +1,7 @@
 const best = (prices) => {
   const stockAnalyzed = analyzeStock(prices);
   let bestProfit = 0;
-  if (stockAnalyzed.length === 0) {
-    bestProfit = 0;
-  } else {
+  if (stockAnalyzed.length !== 0) {
     bestProfit = Math.max(...stockAnalyzed.map(item => item.profitValue));
   };
   bestProfit = stockAnalyzed.find(profitDetails => profitDetails.profitValue == bestProfit);
