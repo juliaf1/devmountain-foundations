@@ -346,14 +346,12 @@ let sampleArray = [0,1,2,3,4,5,6,7,8,9]
 
 const isAscending = function(array) {
   let ascending = true;
-  for(let i = 0; i < array.length; i++) {
-    if (i > 0) {
-      if (eval(array[i]) >= eval(array[i - 1])) {
-        ascending = true;
-      } else {
-        ascending = false;
-        break;
-      };
+  for(let i = 1; i < array.length; i++) {
+    if (eval(array[i]) >= eval(array[i - 1])) {
+      ascending = true;
+    } else {
+      ascending = false;
+      break;
     };
   };
   return ascending;
