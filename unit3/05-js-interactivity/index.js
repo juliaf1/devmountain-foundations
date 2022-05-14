@@ -24,17 +24,24 @@ const addMovie = event => {
 };
 
 const removeMovie = event => {
-  message.textContent = 'Movie deleted';
+  message.textContent = `${event.target.parentNode.firstChild.textContent} deleted`;
   event.target.parentNode.remove();
+  revealMessage();
 };
 
 const checkMovie = event => {
   event.target.classList.toggle('checked');
   if (event.target.classList.contains('checked')) {
-    message.textContent = 'Movie watched';
+    message.textContent = `${event.target.textContent} watched`;
   } else {
-    message.textContent = 'Movie added back to watch list';
+    message.textContent = `${event.target.textContent} added back to watch list`;
   };
+  revealMessage();
+};
+
+const revealMessage = () => {
+  message.classList.remove('hide');
+  setTimeout(() => { message.classList.add('hide') }, 1000);
 };
 
 form.addEventListener('submit', addMovie);
