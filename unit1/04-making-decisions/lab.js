@@ -66,7 +66,7 @@ let hotWeather = temperature >= 80
 let chillWeather = temperature >= 60 && temperature < 80
 
 if (hotWeather) {
-  message = 'Wear a t-shirt';
+  let message = 'Wear a t-shirt';
   if (hotWeather) {
     message += ' and take an umbrella'
   };
