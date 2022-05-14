@@ -7,16 +7,16 @@ const reader = readline.createInterface({
 
 reader.question("What would you like to calculate?", function(input){
 	// Maps user input
-	tokens = input.split(' ');
+	let tokens = input.split(' ');
 
 	// Gets math symbol (first element of user input)
-	mathSymbol = tokens[0];
+	let mathSymbol = tokens[0];
 
 	// Removes first item (math operator) from array
 	tokens.shift();
 
 	// Gets result
-	result = getResult(mathSymbol, tokens);
+	let result = getResult(mathSymbol, tokens);
 
 	// Prints result
 	printResult(result);
