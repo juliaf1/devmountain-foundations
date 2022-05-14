@@ -74,7 +74,7 @@ last(names, lastName => {
 */
 
 const contains = (array, name, cb) => {
-  array.includes(name) ? cb(true) : cb(false);
+  cb(array.includes(name));
 };
 
 // UNCOMMENT THE FUNCTION CALL BELOW
