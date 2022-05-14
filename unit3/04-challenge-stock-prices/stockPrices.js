@@ -16,7 +16,7 @@ const analyzeStock = (prices) => {
   for(let i = 0; i < prices.length - 1; i++) {
     for(let j = i + 1; j < prices.length; j++) {
       profit = prices[j] - prices[i];
-      profitsDetails.push({ 'profitValue': profit, 'buyPrice': prices[i], 'sellPrice': prices[j] });
+      profitsDetails.push({ profitValue: profit, buyPrice: prices[i], sellPrice: prices[j] });
     };
   };
   return profitsDetails;
