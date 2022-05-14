@@ -14,7 +14,7 @@ firstItem = arr.at(0);
   Remove the last item from the 'arr' array and store it in a variable named 'lastItemRemoved'. Console.log the array to verify you no longer have the last item.
 */
 
-lastItemRemoved = arr.pop();
+let lastItemRemoved = arr.pop();
 console.log(arr);
 
 ////////// PROBLEM 3 //////////
@@ -75,11 +75,11 @@ const getLetterGrade = (score) => {
   let letterGrade = 'A';
   if (score >= 90) {
     letterGrade = 'A';
-  } else if (score >= 80 && score < 90) {
+  } else if (score >= 80) {
     letterGrade = 'B';
-  } else if (score >= 70 && score < 80) {
+  } else if (score >= 70) {
     letterGrade = 'C';
-  } else if (score >= 60 && score < 70) {
+  } else if (score >= 60) {
     letterGrade = 'D';
   } else {
     letterGrade = 'F';
