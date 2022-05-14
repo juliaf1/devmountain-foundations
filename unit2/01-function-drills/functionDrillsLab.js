@@ -147,7 +147,6 @@ function nameCheck(name) {
     case 'Bryan':
     case 'Steven':
       return `Whats is up ${name}?`;
-      break;
     default:
       return `Cool name, ${name}`;
   };
@@ -170,13 +169,10 @@ const faveColorFinder = function(color) {
   switch(color) {
     case 'red':
       return 'red is a great color';
-      break;
     case 'green':
-      return 'green is a solic favorite color';
-      break;
+      return 'green is a solid favorite color';
     case 'black':
       return 'so trendy';
-      break;
     default:
       return 'you need to evaluate your favorite color choice';
   };
