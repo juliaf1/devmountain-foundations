@@ -36,3 +36,7 @@ input {
 img {
 	max-width: 300px;
 }
+
+#google, #friend, #other {
+  display: inline-block;
+}
