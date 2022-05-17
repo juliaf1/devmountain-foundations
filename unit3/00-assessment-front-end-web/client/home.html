@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homepage</title>
+	<link href="./stylesheets/styles.css" rel="stylesheet">
+
+</head>
+<body>
+	<nav>
+		<ol>
+	        <li class="crumb"><a href="./home.html">Home</a></li>
+	        <li class="crumb"><a href="./profile.html">Profile</a></li>
+	        <li class="crumb"><a href="./about.html">About</a></li>
+	    </ol>
+	</nav>
+
+	<content>
+		<h1>Welcome to this little website.</h1>
+		<p>Grab a drink and make yourself at home</p>
+
+		<img src="https://i.pinimg.com/originals/bd/7e/87/bd7e87d8c0fbc40a86f90a855878f701.jpg">
+
+		<p>Here are some nice things I have to say about you:</p>
+		<ul>
+			<li>You look lovely today</li>
+			<li>You are cool</li>
+			<li>You like Harry Potter</li>
+		</ul>
+
+		<h2>Contact Us</h2>
+		<form id="contact">
+			Your name:
+			<input type="text"><br>
+
+			Message:
+			<input type="textarea"><br>
+
+			How did you hear about this website:<br>
+			<input type="radio" id="google" name="referal" value="Google"> Google
+			<br>
+			<input type="radio" id="friend" name="referal" value="friend"> A friend
+			<br>
+			<input type="radio" id="other" name="referal" value="other"> Other
+			<br><br>
+		
+			<input type="submit"><br>
+		</form>
+
+	</content>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+	<script src="home.js"></script>
+
+</body>
+</html>

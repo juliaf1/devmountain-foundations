@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5 {
 	font-family: Poppins, sans-serif;
 }
 
-p {
+p, a {
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -31,16 +31,30 @@ p {
 
 .left-section .content {
 	position: absolute;
-	top: 50%;
+	top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
 	color: #f4f4f5;
 	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 340px;
+}
+
+.left-section .content img {
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+}
+
+.left-section .content img:hover {
+	opacity: .8;
 }
 
 .blob-gif {
 	position: absolute;
-	top: 70%;
+	top: 28%;
   left: 50%;
 	transform: translate(-50%, -50%);
 }
@@ -53,7 +67,7 @@ p {
 
 .left-section p {
 	font-weight: 300;
-	margin: 0 0 36px;
+	margin: 0 0 12px;
 }
 
 .right-section {
@@ -66,6 +80,8 @@ p {
 .right-section .top-section {
 	height: 50%;
 	display: flex;
+	z-index: 1;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
 }
 
 .right-section .footer-section {
@@ -78,11 +94,59 @@ p {
 	width: 40%;
 	background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    url('./project-aventureiro.png');
+    url('../assets/project-aventureiro.png');
 	background-repeat: no-repeat;
 	background-position: left;
 	background-size: cover;
 	background-color: black;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+	position: relative;
+}
+
+.project-image:hover {
+	background-image:
+		linear-gradient(to bottom, rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)),
+		url('../assets/project-aventureiro.png');
+}
+
+.project-controls {
+	color: #f4f4f5;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.project-controls a {
+	color: #f4f4f5;
+	border-bottom: 1px solid #f4f4f5;
+	padding-bottom: 2px;
+	text-decoration: none;
+}
+
+.project-controls a:hover {
+	border-bottom: 1px solid #ffd322;
+}
+
+.shuffle-button {
+	text-align: center;
+	border: 2px solid #f4f4f5;
+	border-radius: 10px;
+	padding: 18px 22px;
+	margin-bottom: 24px;
+	cursor: pointer;
+}
+
+.shuffle-button:hover {
+	border: 2px solid #ffd322;
+}
+
+.shuffle-button p {
+	margin: 4px 0 0;
 }
 
 .top-section .project-content {
@@ -90,6 +154,9 @@ p {
 	padding: 40px;
 	color: #27272a;
 	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 
 .project-content h2 {
@@ -108,10 +175,16 @@ p {
 }
 
 .footer-section .about-section {
-	width: 60%;
+	width: calc(100% - 120px);
 }
 
 .footer-section .profile-section {
-	width: 40%;
-	/* background-color: #4D9DE0; */
+	width: 120px;
+	background-color: #18181b;
+	display: flex;
+	box-shadow: -2px 0px 6px rgba(0, 0, 0, 0.15);
+}
+
+.hidden {
+	visibility: hidden;
 }
