@@ -1,11 +1,8 @@
 const hasMoreVowels = word => {
   const vowels = ['a', 'e', 'i', 'o', 'u'];
-  let wordArray = word.toLowerCase().split('');
-  if (wordArray.filter(letter => vowels.includes(letter)).length > (word.length / 2)) {
-    return true;
-  } else {
-    return false;
-  };
+  const wordArray = word.toLowerCase().split('');
+  const vowelsCount = wordArray.filter(letter => vowels.includes(letter)).length
+  return vowelsCount > (word.length / 2);
 };
 
 console.log(hasMoreVowels('mice'));
