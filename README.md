@@ -12,8 +12,6 @@ Foundations course has 9 units, whose descriptions will be added as they are com
 
 2. `Object Orientation and Design`: Covers functions in Javascript and Object Orientation theory, as well as it discuss theories and tools of front-end design, including information architecture, color theory, visual design, and more.
 
-2. `Object Orientation and Design`: Covers functions in Javascript and Object Orientation theory, as well as it covers theories and tools of front-end design, including information architecture, color theory, visual design, and more.
-
 3. `Front-end`: Covers how the web works and front-end theory, HTML, CSS and DOM manipulation to create interactivity using vanilla Javascript.
 
 4. `Back-end`: Covers back-end web theory, APIs and how to build web applications with Node's Express framework, along with an overview of key cryptography concepts.
