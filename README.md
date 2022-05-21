@@ -6,7 +6,7 @@ All challenges are grouped by unit, and final assessments can be found on their 
 ---
 
 ### General Overview
-Foundations course has 9 units, whose descriptions will be added as they are completed.
+Foundations course has 9 units:
 
 1. `Software Development Intro`: Covers software development methodologies, focusing on the core activities of agile software development, and basic coding concepts, such as variables, integers, strings, floats, booleans and control flow.
 
