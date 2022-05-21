@@ -3,21 +3,21 @@ const projects = [
     title: 'Aventureiro',
     link: 'https://juliafrederico.webflow.io/work/project-1',
     image: 'https://uploads-ssl.webflow.com/5fdf8cae083cee887e2edcf5/5fe12f6d3be2b110c3d28a13_a2.png',
-    description: 'A plataform to connect local families from a remote beach in Ilha Grande with potential tourists. The project helps people from the community to manage the touristic activity with a lightweight webapp and WhatsApp integration.',
+    description: 'A plataform to connect local families from a remote beach in Ilha Grande with potential tourists. The project helps people from the community to manage the touristic activity with a lightweight webapp and WhatsApp integration. I worked as project manager and lead dev during our 2 week work sprint. My main contributions were designing stylesheets and database schema, managing our production Trello and workflow, besides working on the back and front-end.',
     tags: ['Ruby on Rails']
   },
   {
     title: 'Boca Miúda',
     link: 'https://juliafrederico.webflow.io/work/boca-miuda',
-    image: 'https://uploads-ssl.webflow.com/5fdf8cae083cee887e2edcf5/60d60366a1ffd768764dfbe9_Captura%20de%20Tela%202021-06-25%20a%CC%80s%2013.27.09.png',
+    image: 'https://uploads-ssl.webflow.com/5fdf8cae083cee887e2edcf5/6289650106854d6a51321605_Captura%20de%20Tela%202022-05-21%20a%CC%80s%2019.17.07.png',
     description: 'Boca Miúda is a circuit of artists from the state of Rio de Janeiro, organized in a curated admin managed library.',
     tags: ['Ruby on Rails']
   },
   {
     title: 'Cuukin',
     link: 'http://cuukin.herokuapp.com/',
-    image: '',
-    description: '',
+    image: 'https://uploads-ssl.webflow.com/5fdf8cae083cee887e2edcf5/62896501c1220909ae1e3589_Captura%20de%20Tela%202022-05-21%20a%CC%80s%2019.16.43.png',
+    description: 'Cuukin is a web app that teaches people how to cook with a handmade gamified journey based on personal taste. I worked as a full-stack developer, creating the app from scratch, designing its database and implementing all features.',
     tags: ['Ruby on Rails']
   },
   {
