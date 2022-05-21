@@ -3,7 +3,7 @@ const decoder = code => {
   let index = 0;
   let skipCount = code[index];
   while (skipCount !== undefined) {
-    index += parseInt(skipCount) + 1;
+    index += +skipCount + 1;
     decryptedCode = decryptedCode.concat(code[index]);
     index++;
     skipCount = code[index];
