@@ -10,16 +10,15 @@ const createHouse = (req, res) => {
   db.push({
     id,
     address,
-    price,
-    imageURL
+    price: +price,
+    imageURL,
   });
   id++;
   res.status(201).send(db);
 };
 
 const updateHouse = (req, res) => {
-  const houseId = db.findIndex(house => house.id == req.params.id);
-  const house = db[houseId];
+  const house = findHouse(req.params.id);
   const { type } = req.body;
   if (type === 'minus') {
     house.price -= 10000;
@@ -33,7 +32,17 @@ const updateHouse = (req, res) => {
 };
 
 const deleteHouse = (req, res) => {
-  console.log('delete house');
+  const houseIndex = findHouseIndex(req.params.id);
+  db.splice(houseIndex, 1);
+  res.status(200).send(db);
+};
+
+const findHouseIndex = id => {
+  return db.findIndex(house => house.id == id);
+};
+
+const findHouse = id => {
+  return db[findHouseIndex(id)];
 };
 
 module.exports = {
