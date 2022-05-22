@@ -1,5 +1,8 @@
+const db = require('../db.json');
+let upcomingId = 4;
+
 const getHouses = (req, res) => {
-  console.log('get houses');
+  res.status(200).send(db);
 };
 
 const createHouse = (req, res) => {
