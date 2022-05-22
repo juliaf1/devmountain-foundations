@@ -18,7 +18,18 @@ const createHouse = (req, res) => {
 };
 
 const updateHouse = (req, res) => {
-  console.log('update house');
+  const houseId = db.findIndex(house => house.id == req.params.id);
+  const house = db[houseId];
+  const { type } = req.body;
+  if (type === 'minus') {
+    house.price -= 10000;
+  } else if (type === 'plus') {
+    house.price += 10000;
+  } else {
+    res.status(400).send('Type must be plus or minus');
+    return
+  };
+  res.status(200).send(db);
 };
 
 const deleteHouse = (req, res) => {
