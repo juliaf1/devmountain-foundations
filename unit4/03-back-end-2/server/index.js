@@ -1,17 +1,18 @@
 const express = require('express');
 const cors = require('cors');
+const { getHouses, createHouse, updateHouse, deleteHouse } = require('./controllers/houses_controller');
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get('/api/houses', () => {});
+app.get('/api/houses', getHouses);
 
-app.post('/api/houses', () => {});
+app.post('/api/houses', createHouse);
 
-app.put('/api/houses/:id', () => {});
+app.put('/api/houses/:id', updateHouse);
 
-app.delete('/api/houses/:id', () => {});
+app.delete('/api/houses/:id', deleteHouse);
 
 const PORT = 4004;
-app.listen(port, () => {console.log(`Server is running on http://localhost:${PORT}`)});
+app.listen(PORT, () => {console.log(`Server is running on http://localhost:${PORT}`)});
