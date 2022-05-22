@@ -1,12 +1,20 @@
 const db = require('../db.json');
-let upcomingId = 4;
+let id = 4;
 
 const getHouses = (req, res) => {
   res.status(200).send(db);
 };
 
 const createHouse = (req, res) => {
-  console.log('create house');
+  const { address, price, imageURL } = req.body;
+  db.push({
+    id,
+    address,
+    price,
+    imageURL
+  });
+  id++;
+  res.status(201).send(db);
 };
 
 const updateHouse = (req, res) => {
