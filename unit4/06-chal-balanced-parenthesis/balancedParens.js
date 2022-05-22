@@ -19,7 +19,7 @@ const hasBalancedParens = string => {
       };
     };
   };
-  return string.findIndex(char => char === '(' || char === ')') === -1;
+  return string.includes('(') || string.includes(')');
 };
 
 console.log(hasBalancedParens(sample1));
