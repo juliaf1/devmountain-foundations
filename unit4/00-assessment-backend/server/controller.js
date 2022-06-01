@@ -8,6 +8,17 @@ const getFortune = (req, res) => {
     res.status(200).send(fortunes.sample());
 };
 
+const getDrinkBotAnswer = (req, res) => {
+    let date = new Date();
+    if (date.getDay() === 5 && date.getHours() > 18) {
+        res.status(200).send(`Yas! Time to listen to Zeca Pagodinho and drink beer 💃🍻`);
+    } else if (date.getDay() === 4) {
+        res.status(200).send(`Almost there, friday is coming 💫`);
+    } else {
+        res.status(200).send(`Nope, keep working 😮‍💨`);
+    };
+};
+
 Array.prototype.sample = function(){
     return this[Math.floor(Math.random()*this.length)];
 };
@@ -15,4 +26,5 @@ Array.prototype.sample = function(){
 module.exports = {
     getCompliment,
     getFortune,
+    getDrinkBotAnswer,
 }
