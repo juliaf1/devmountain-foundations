@@ -2,13 +2,24 @@
 <html>
   <head>
     <title>Back End Assessment</title>
+    <link href="./style.css" rel="stylesheet">
   </head>
-  <body class="container">
-    <button id="complimentButton">Get a compliment</button>
-    <button id="fortuneButton">Get a fortune</button>
+
+  <body>
+    <section>
+      <button id="complimentButton">Get a compliment</button>
+      <button id="fortuneButton">Get a fortune</button>
+      <button id="drinkBotButton">Can I quit work and start drinking?</button>
+    </section>
+
+    <div class="d-none sweet-alert-container">
+      <div class="sweet-alert-content">
+        <h1>Bot answer placeholder</h1>
+      </div>
+    </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
-    
+
   </body>
 </html>
