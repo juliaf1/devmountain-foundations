@@ -19,6 +19,18 @@ const getDrinkBotAnswer = (req, res) => {
     };
 };
 
+const createToDoItem = (req, res) => {
+    res.status(200)
+}
+
+const listToDoItems = (req, res) => {
+    res.status(200)
+};
+
+const updateToDoItem = (req, res) => {
+    res.status(200);
+};
+
 Array.prototype.sample = function(){
     return this[Math.floor(Math.random()*this.length)];
 };
@@ -27,4 +39,7 @@ module.exports = {
     getCompliment,
     getFortune,
     getDrinkBotAnswer,
+    createToDoItem,
+    listToDoItems,
+    updateToDoItem,
 }
