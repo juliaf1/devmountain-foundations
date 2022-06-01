@@ -1,3 +1,6 @@
+const db = require('./db.json');
+let id = 4;
+
 const getCompliment = (req, res) => {
     const compliments = ["Gee, you're a smart cookie!", "Cool shirt!", "Your Javascript skills are stellar."];
     res.status(200).send(compliments.sample());
@@ -20,16 +23,29 @@ const getDrinkBotAnswer = (req, res) => {
 };
 
 const createToDoItem = (req, res) => {
-    res.status(200)
+    const { title } = req.body;
+    db.push({ id, title });
+    id++;
+    res.status(201).send(db);
 }
 
 const listToDoItems = (req, res) => {
-    res.status(200)
+    res.status(200).send(db);
 };
 
 const updateToDoItem = (req, res) => {
-    res.status(200);
+    const item = findToDoItem(req.params.id);
+    item.title = req.body.title;
+    res.status(200).send(db);
 };
+
+const findToDoItemIndex = id => {
+    return db.findIndex(house => house.id == id);
+  };
+  
+  const findToDoItem = id => {
+    return db[findToDoItemIndex(id)];
+  };
 
 Array.prototype.sample = function(){
     return this[Math.floor(Math.random()*this.length)];
