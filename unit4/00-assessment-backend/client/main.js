@@ -3,6 +3,8 @@ const fortuneBtn = document.getElementById("fortuneButton");
 const drinkBtn = document.getElementById("drinkBotButton");
 const sweetAlertContainer = document.querySelector(".sweet-alert-container");
 const sweetAlertText = sweetAlertContainer.querySelector("h1");
+const toDoInput = document.querySelector("#toDoInput");
+const toDoBtn = document.querySelector("#toDoButton");
 
 const API_BASE_URL = 'http://localhost:4000/api/';
 
@@ -34,6 +36,20 @@ const getDrinkBotAnswer = () => {
     });
 };
 
+const addToDoList = () => {
+    let item = toDoInput.value;
+    axios.post(API_BASE_URL + 'to_do_list', {})
+        .then(res => {
+            const data = res.data;
+            sweetAlertContainer.classList.remove('d-none');
+            sweetAlertText.innerText = data;
+            setTimeout(function() {
+                sweetAlertContainer.classList.add('d-none');
+            }, 1800);
+    });
+};
+
 complimentBtn.addEventListener('click', getCompliment);
 fortuneBtn.addEventListener('click', getFortune);
 drinkBtn.addEventListener('click', getDrinkBotAnswer);
+toDoBtn.addEventListener('click', addToDoList);

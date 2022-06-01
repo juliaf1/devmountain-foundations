@@ -6,17 +6,25 @@
   </head>
 
   <body>
-    <section>
+    <nav>
       <button id="complimentButton">Get a compliment</button>
       <button id="fortuneButton">Get a fortune</button>
       <button id="drinkBotButton">Can I quit work and start drinking?</button>
-    </section>
+    </nav>
 
     <div class="d-none sweet-alert-container">
       <div class="sweet-alert-content">
         <h1>Bot answer placeholder</h1>
       </div>
     </div>
+
+    <section>
+      <label for="toDo">Add a to do item:</label>
+      <div class="to-do-container">
+        <input type="text" name="toDo" id="toDoInput">
+        <button id="toDoButton">Add</button>
+      </div>
+    </section>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
