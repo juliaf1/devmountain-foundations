@@ -22,7 +22,7 @@ const getDrinkBotAnswer = (req, res) => {
 
 const createToDoItem = (req, res) => {
     const { title } = req.body;
-    db.push({ id, title });
+    toDoList.push({ id, title, completed: false });
     id++;
     res.status(201).send(toDoList);
 };
