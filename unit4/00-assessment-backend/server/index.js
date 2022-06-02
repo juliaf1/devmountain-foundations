@@ -17,8 +17,8 @@ app.get("/api/drink_allowed", getDrinkBotAnswer);
 
 app.post("/api/todo", createToDoItem)
 
-app.get("api/todo", listToDoItems);
+app.get("/api/todo", listToDoItems);
 
-app.put("api/todo/:id", updateToDoItem);
+app.put("/api/todo/:id", updateToDoItem);
 
 app.listen(4000, () => console.log("Server running on 4000"));
