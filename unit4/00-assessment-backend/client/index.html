@@ -20,10 +20,19 @@
     </div>
 
     <section>
-      <label for="toDo">Add a to do item:</label>
-      <div class="to-do-container">
-        <input type="text" name="toDo" id="toDoInput">
-        <button id="toDoButton">Add</button>
+      <form action="toDoList">
+        <label for="toDo">Add a to do item:</label>
+        <div class="to-do-container">
+          <input type="text" name="toDo" id="toDoInput">
+          <button type="submit" id="toDoButton">Add</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="toDoListContainer">
+      <div class="to-do-item" id="1">
+        <span class="to-do-check">✔️</span>
+        <p class="to-do-text">Text placeholder</p>
       </div>
     </section>
 
