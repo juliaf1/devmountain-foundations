@@ -2,15 +2,18 @@
   "toDoList": [
       {
         "id": 1,
-        "title": "Take Nina to the vet"
+        "title": "Take Nina to the vet",
+        "completed": false
       },
       {
         "id": 2,
-        "title": "Finish my Devmountain Assessment"
+        "title": "Finish my Devmountain Assessment",
+        "completed": false
       },
       {
         "id": 3,
-        "title": "Cancel Netflix subscription"
+        "title": "Cancel Netflix subscription",
+        "completed": false
       }
     ],
   "compliments": [
