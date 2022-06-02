@@ -1,14 +1,43 @@
-[
-    {
-      "id": 1,
-      "title": "Take Nina to the vet"
+{
+  "toDoList": [
+      {
+        "id": 1,
+        "title": "Take Nina to the vet"
+      },
+      {
+        "id": 2,
+        "title": "Finish my Devmountain Assessment"
+      },
+      {
+        "id": 3,
+        "title": "Cancel Netflix subscription"
+      }
+    ],
+  "compliments": [
+    "Gee, you're a smart cookie!",
+    "Cool shirt!",
+    "Your Javascript skills are stellar."
+  ],
+  "fortunes": [
+    "Bide your time, for success is near.",
+    "Change is happening in your life, so go with the flow!",
+    "Dedicate yourself with a calm mind to the task at hand.",
+    "Don't be discouraged, because every wrong attempt discarded is another step forward.",
+    "Education is the ability to meet life's situations.",
+    "It's time to get moving. Your spirits will lift accordingly."
+  ],
+  "drinkBotMessages": {
+    "fridayAfterHours": {
+      "emoji": "💃🍻",
+      "text": "Yas! Time to listen to Zeca Pagodinho and drink beer"
     },
-    {
-      "id": 2,
-      "title": "Finish my Devmountain Assessment"
+    "thursday": {
+      "emoji": "💫",
+      "text": "Almost there, friday is coming"
     },
-    {
-      "id": 3,
-      "title": "Cancel Netflix subscription"
+    "workingHours": {
+      "emoji": "😮‍💨",
+      "text": "Nope, keep working"
     }
-  ]
+  }
+}
