@@ -33,8 +33,8 @@ const listToDoItems = (req, res) => {
 
 const updateToDoItem = (req, res) => {
     const item = findToDoItem(req.params.id);
-    item.title = req.body.title;
-    res.status(200).send(toDoList);
+    item.completed = !item.completed;
+    res.status(200).send(item);
 };
 
 const findToDoItemIndex = id => {

@@ -12,7 +12,6 @@ const toDoInput = document.querySelector('#toDoInput');
 const toDoForm = document.querySelector('form');
 const toDoBtn = document.querySelector('#toDoButton');
 const toDoListContainer = document.querySelector('#toDoListContainer');
-const toDoItems = document.querySelectorAll('.to-do-item');
 
 const getCompliment = () => {
     axios.get(API_BASE_URL + 'compliment')
@@ -61,6 +60,7 @@ const displayToDoList = list => {
         toDoItem.innerHTML = `<span class="to-do-check">${completed ? '✔️' : ''}</span>
         <p class="to-do-text">${title}</p>`;
         toDoListContainer.appendChild(toDoItem);
+        toDoItem.querySelector('.to-do-check').addEventListener('click', handleCheckButton);
     });
 };
 
@@ -72,6 +72,15 @@ const addToDoList = event => {
         .then(res => {
             const data = res.data;
             displayToDoList(data);
+    });
+};
+
+const handleCheckButton = event => {
+    const itemId = +event.target.parentElement.id;
+    axios.put(API_BASE_URL + `todo/${itemId}`)
+        .then(res => {
+            const { completed } = res.data;
+            event.target.innerText = completed ? '✔️' : '';
     });
 };
 
