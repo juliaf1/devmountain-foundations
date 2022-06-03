@@ -32,13 +32,8 @@ const getFortune = () => {
 const getDrinkBotAnswer = () => {
     axios.get(API_BASE_URL + 'drink_allowed')
         .then(res => {
-            const data = res.data;
-            sweetAlertContainer.classList.remove('d-none');
-            sweetAlertText.innerText = data.text;
-            sweetAlertIcon.innerText = data.emoji;
-            setTimeout(function() {
-                sweetAlertContainer.classList.add('d-none');
-            }, 1800);
+            const {emoji, text} = res.data;
+            displayAlert(emoji, text);
     });
 };
 
@@ -81,7 +76,20 @@ const handleCheckButton = event => {
         .then(res => {
             const { completed } = res.data;
             event.target.innerText = completed ? '✔️' : '';
-    });
+        })
+        .catch((err, res) => {
+            const { icon, description } = err.response.data;
+            displayAlert(icon, description);
+        });
+};
+
+const displayAlert = (icon, text) => {
+    sweetAlertContainer.classList.remove('d-none');
+    sweetAlertText.innerText = text;
+    sweetAlertIcon.innerText = icon;
+    setTimeout(function() {
+        sweetAlertContainer.classList.add('d-none');
+    }, 1800);
 };
 
 complimentBtn.addEventListener('click', getCompliment);

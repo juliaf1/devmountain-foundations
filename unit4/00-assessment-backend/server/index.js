@@ -7,7 +7,7 @@ app.use(cors());
 
 app.use(express.json());
 
-const { getCompliment, getFortune, getDrinkBotAnswer, createToDoItem, listToDoItems, updateToDoItem } = require('./controller')
+const { getCompliment, getFortune, getDrinkBotAnswer, createToDoItem, listToDoItems, updateToDoItem } = require('./controller');
 
 app.get("/api/compliment", getCompliment);
 

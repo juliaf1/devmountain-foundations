@@ -33,8 +33,12 @@ const listToDoItems = (req, res) => {
 
 const updateToDoItem = (req, res) => {
     const item = findToDoItem(req.params.id);
-    item.completed = !item.completed;
-    res.status(200).send(item);
+    if (item.title.includes('Cancel Netflix')) {
+        res.status(400).send({icon: '🤔', description: `You really shouldn't`});
+    } else {
+        item.completed = !item.completed;
+        res.status(200).send(item);
+    }
 };
 
 const findToDoItemIndex = id => {
