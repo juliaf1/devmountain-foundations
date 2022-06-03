@@ -13,36 +13,19 @@ const toDoForm = document.querySelector('form');
 const toDoBtn = document.querySelector('#toDoButton');
 const toDoListContainer = document.querySelector('#toDoListContainer');
 
-const getCompliment = () => {
-    axios.get(API_BASE_URL + 'compliment')
-        .then(res => {
-            const data = res.data;
-            alert(data);
-    });
+const handleButton = (event) => {
+    const url = API_BASE_URL + event.target.name;
+    axios.get(url).then(({ data }) => alert(data));
 };
 
-const getFortune = () => {
-    axios.get(API_BASE_URL + 'fortune')
-        .then(res => {
-            const data = res.data;
-            alert(data);
-    });
-};
-
-const getDrinkBotAnswer = () => {
-    axios.get(API_BASE_URL + 'drink_allowed')
-        .then(res => {
-            const {emoji, text} = res.data;
-            displayAlert(emoji, text);
-    });
+const handleDrinkBotButton = () => {
+    const url = API_BASE_URL + 'drink_allowed';
+    axios.get(url).then(({ data }) => displaySweetAlert(data.emoji, data.text));
 };
 
 const getToDoList = () => {
-    axios.get(API_BASE_URL + 'todo')
-        .then(res => {
-            const data = res.data;
-            displayToDoList(data);
-    });
+    const url = API_BASE_URL + 'todo';
+    axios.get(url).then(({ data }) => displayToDoList(data));
  };
 
 const displayToDoList = list => {
@@ -59,15 +42,12 @@ const displayToDoList = list => {
     });
 };
 
-const addToDoList = event => {
+const addToDoListItem = event => {
     event.preventDefault();
-    let item = toDoInput.value;
+    const url = API_BASE_URL + 'todo'
+    const body = { title: toDoInput.value };
+    axios.post(url, body).then(({ data }) =>  displayToDoList(data));
     toDoInput.value = '';
-    axios.post(API_BASE_URL + 'todo', { title: item })
-        .then(res => {
-            const data = res.data;
-            displayToDoList(data);
-    });
 };
 
 const handleCheckButton = event => {
@@ -79,11 +59,11 @@ const handleCheckButton = event => {
         })
         .catch((err, res) => {
             const { icon, description } = err.response.data;
-            displayAlert(icon, description);
+            displaySweetAlert(icon, description);
         });
 };
 
-const displayAlert = (icon, text) => {
+const displaySweetAlert = (icon, text) => {
     sweetAlertContainer.classList.remove('d-none');
     sweetAlertText.innerText = text;
     sweetAlertIcon.innerText = icon;
@@ -92,9 +72,9 @@ const displayAlert = (icon, text) => {
     }, 1800);
 };
 
-complimentBtn.addEventListener('click', getCompliment);
-fortuneBtn.addEventListener('click', getFortune);
-drinkBtn.addEventListener('click', getDrinkBotAnswer);
-toDoForm.addEventListener('submit', addToDoList);
+complimentBtn.addEventListener('click', handleButton);
+fortuneBtn.addEventListener('click', handleButton);
+drinkBtn.addEventListener('click', handleDrinkBotButton);
+toDoForm.addEventListener('submit', addToDoListItem);
 
 getToDoList();
