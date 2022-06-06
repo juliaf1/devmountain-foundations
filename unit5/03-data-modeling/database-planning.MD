@@ -49,7 +49,7 @@ I can invite other users via email to manage (add/remove recipes of) a collectio
 - Recipes: title, description, yummy picture, prep time, public?, ingredients, instructions, shared link, authors, likes count
 - Grocery Lists: title, created at, ingredients `and the id of the user that created it`
 - Occasions: title, description, shared link, recipes
-
+-----------
 - RecipeIngredients: recipe's ingredients - recipe id, amount, name of ingredient
 - RecipeInstructions: recipe's instructions - recipe id, title, description, step (order)
 - GroceryLists: users'grocery lists - user id, title
