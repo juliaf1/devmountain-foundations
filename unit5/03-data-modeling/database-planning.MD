@@ -45,19 +45,76 @@ I can invite other users via email to manage (add/remove recipes of) a collectio
 
 ### Table Ideas
 
-- App Users: email, password, name, avatar, activated
-- Recipes: title, description, yummy picture, prep time, public?, ingredients, instructions, shared link, authors, likes count
-- Grocery Lists: user id, title, created at, ingredients
-- Occasions: title, description, shared link, recipes
------------
-- RecipeIngredients: recipe's ingredients - recipe id, amount, name of ingredient
-- RecipeInstructions: recipe's instructions - recipe id, title, description, step (order)
-- GroceryLists: users'grocery lists - user id, title
-- OccasionsUsers: users allowed to manage a collection - user id, occasion id, role (owner, admin)
-- RecipesUsers: users allowed to manage a recipe - user id, recipe id, role (owner, admin, editor)
-- OccasionsRecipes: recipes of each collection - occasion id, recipe id
-- GroceryListsIngredients: grocery lists' ingredients - recipe ingredient id, grocery list id, personalized amount (when null, default recipe ingredient amount is displayed), checked?
-- RecipesLikes: which users have liked each recipe - user id, recipe id, created_at
+| App Users Fields | Description |
+| ----------- | ----------- |
+| Email | To allow users to sign in and account recovery |
+| Password | To allow users to sign in |
+| Name | To display to other users who created a Recipe |
+| Avatar | To improve personal branding |
+| Activated? | To keep track if the user verified their email |
+
+| Recipes Fields | Description |
+| ----------- | ----------- |
+| Title | To allow users to filter and search for recipes |
+| Description | To gain more details on the recipe background |
+| Yummy Picture | To increase user engagement / make people feel disappointed when their recipes don't plan out accordingly |
+| Prep Time | To allow users to filter recipes |
+| Public? | To disable/enable other users from viewing/searching for the recipe |
+| Shared Link | To allow other users to access an unlisted/private recipe |
+| Likes count | To improve perfomance when listing/displaying recipes (prevents from having to search through the RecipesLikes table every time) |
+
+| Grocery Lists Fields | Description |
+| ----------- | ----------- |
+| User Id | - |
+| Title | To allow users to identify their lists |
+
+| Occasions Fields | Description |
+| ----------- | ----------- |
+| Title | To allow users to filter and search for occasions |
+| Description | To gain more details on that collection |
+| Shared Link | To allow other users to access an unlisted/private occasion |
+
+| Recipe Ingredients Fields | Description |
+| ----------- | ----------- |
+| Recipe id | - |
+| Amount | To keep track of the amount needed for that ingredient |
+| Ingredient name | To identify the ingredient |
+
+| Recipe Instructions Fields | Description |
+| ----------- | ----------- |
+| Recipe id | - |
+| Title | To hightlight the instruction theme |
+| Description | To detail the instruction |
+| Step | To save the step/order of that instruction step |
+
+| Recipes Users | Description |
+| ----------- | ----------- |
+| Recipe id | - |
+| User id | - |
+| Role | To manage the access rights each user has on each recipe |
+
+| Occasions Users | Description |
+| ----------- | ----------- |
+| Recipe id | - |
+| Occasion id | - |
+| Role | To manage the access rights each user has on each occasion |
+
+| Occasions Recipes Fields | Description |
+| ----------- | ----------- |
+| Recipe id | - |
+| Occasion id | - |
+
+| Grocery Lists Ingredients Fields | Description |
+| ----------- | ----------- |
+| Recipe Ingredient id | - |
+| Grocery List id | - |
+| Personalized amount | To change the amount needed for that ingredient |
+| Checked? | To track if the item has been bought/cross off |
+
+| Recipes Likes Fields | Description |
+| ----------- | ----------- |
+| Recipe id | - |
+| User id | - |
 
 ### Relationships
 
