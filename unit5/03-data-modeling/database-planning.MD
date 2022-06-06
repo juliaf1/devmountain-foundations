@@ -12,6 +12,8 @@
 
 #### Brainstorming
 
+During my brainstorming session, I considered the user journeys of the Recipe App and the required data for those and grouped them in these detailed User Stories:
+
 As a **User**, I can sign up with my `email` and `password`.<br>
 I can save my `name` and create an `username` so other people can see the recipes I created and find my profile.<br>
 I can set an `avatar` to improve my personal branding.<br>
@@ -40,6 +42,11 @@ I can invite other users via email to manage (add/remove recipes of) a collectio
 
 
 #### Table Ideas
+
+- App Users: will hold information about the user - email, password, name, avatar, activated
+- Recipes: will hold information about the recipe - title, description, prep time, public?, ingredients, instructions, shared link, authors, likes count
+- Grocery Lists: will hold information about the grocery list - title, created at, ingredients
+- Occasion: will hold information about the collection of recipes - title, description, shared link, recipes
 
 #### Relationships
 
