@@ -47,7 +47,7 @@ I can invite other users via email to manage (add/remove recipes of) a collectio
 
 - App Users: email, password, name, avatar, activated
 - Recipes: title, description, yummy picture, prep time, public?, ingredients, instructions, shared link, authors, likes count
-- Grocery Lists: title, created at, ingredients `and the id of the user that created it`
+- Grocery Lists: user id, title, created at, ingredients
 - Occasions: title, description, shared link, recipes
 -----------
 - RecipeIngredients: recipe's ingredients - recipe id, amount, name of ingredient
