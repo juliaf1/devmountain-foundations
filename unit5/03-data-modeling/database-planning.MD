@@ -1,7 +1,7 @@
 # Devmountain Foundations
-### Recipe App Conceptual Planning
+## Recipe App Conceptual Planning
 
-#### Features
+### Features
 
 - users can sign into the app with their email and password
 - users can create recipes with ingredients and instructions
@@ -10,7 +10,7 @@
 - ingredients from recipes can be added to user’s grocery lists
 - users can create their own occasions and assign recipes to occasions
 
-#### Brainstorming
+### Brainstorming
 
 During my brainstorming session, I considered the user journeys of the Recipe App and the required data for those and grouped them in these detailed User Stories:
 
@@ -18,6 +18,8 @@ As a **User**, I can sign up with my `email` and `password`.<br>
 I can save my `name` and create an `username` so other people can see the recipes I created and find my profile.<br>
 I can set an `avatar` to improve my personal branding.<br>
 I can `verify` my email to make my account more secure.<br>
+
+As a **User**, I can create an **Organization Profile** and invite other users to collabore and crate recipes for that profile.
 
 I can create or browser for **Recipes** that have a `title`, `prep time`, `description`, `ingredients` (which are made of quantity + the ingredient itself) and `instructions`.<br>
 When I create a recipe, I can decide if it's `public` and other users can see it or `private` and only me or selected users can see it.<br>
@@ -41,12 +43,26 @@ I can share a private/unlisted occasion with other users via a `shared link`.<br
 I can invite other users via email to manage (add/remove recipes of) a collection.<br>
 
 
-#### Table Ideas
+### Table Ideas
 
 - App Users: will hold information about the user - email, password, name, avatar, activated
 - Recipes: will hold information about the recipe - title, description, prep time, public?, ingredients, instructions, shared link, authors, likes count
 - Grocery Lists: will hold information about the grocery list - title, created at, ingredients
-- Occasion: will hold information about the collection of recipes - title, description, shared link, recipes
+- Occasions: will hold information about the collection of recipes - title, description, shared link, recipes
 
-#### Relationships
+### Relationships
 
+#### One-to-one
+- User-LikedRecipe
+
+#### One-to-many
+- Recipe-Ingredients: each recipe can have multiple ingredients, but each recipe ingredient should belong to only one recipe.
+- Recipe-Instructions: each recipe can have multiple instructions, but each recipe instruction should belong to only one recipe.
+- User-GroceryLists: each user can have multiple grocery lists, but each grocery list should belong to only one user.
+
+#### Many-to-many
+- Users-Recipes: each user can have multiple recipes and each recipe can belong to multiple users - this was first grouped as a One-to-many relationship, but then it was decided to keep as a many to many to facilitate organizations profile and multi authors feature.
+- Users-Occasions: each user can have multiple occasions and each occasion can belong to multiple users - this was first grouped as a One-to-many relationship, but then it was decided to keep as a many to many to facilitate shared management of a collection.
+- Recipes-Occasions: each occasion can have multiple recipes associated with and each recipe can be associated to multiple recipes.
+- GroceryLists-RecipesIngredients: each grocery list can have as many associated with recipe ingredients and each recipe ingredient can be associated to as many grocery lists.
+- Users-LikedRecipe: each user can like multiple recipes and each recipe can be liked by multiple users.
