@@ -45,15 +45,24 @@ I can invite other users via email to manage (add/remove recipes of) a collectio
 
 ### Table Ideas
 
-- App Users: will hold information about the user - email, password, name, avatar, activated
-- Recipes: will hold information about the recipe - title, description, prep time, public?, ingredients, instructions, shared link, authors, likes count
-- Grocery Lists: will hold information about the grocery list - title, created at, ingredients
-- Occasions: will hold information about the collection of recipes - title, description, shared link, recipes
+- App Users: email, password, name, avatar, activated
+- Recipes: title, description, yummy picture, prep time, public?, ingredients, instructions, shared link, authors, likes count
+- Grocery Lists: title, created at, ingredients `and the id of the user that created it`
+- Occasions: title, description, shared link, recipes
+
+- RecipeIngredients: recipe's ingredients - recipe id, amount, name of ingredient
+- RecipeInstructions: recipe's instructions - recipe id, title, description, step (order)
+- GroceryLists: users'grocery lists - user id, title
+- OccasionsUsers: users allowed to manage a collection - user id, occasion id, role (owner, admin)
+- RecipesUsers: users allowed to manage a recipe - user id, recipe id, role (owner, admin, editor)
+- OccasionsRecipes: recipes of each collection - occasion id, recipe id
+- GroceryListsIngredients: grocery lists' ingredients - recipe ingredient id, grocery list id, personalized amount (when null, default recipe ingredient amount is displayed), checked?
+- RecipesLikes: which users have liked each recipe - user id, recipe id, created_at
 
 ### Relationships
 
 #### One-to-one
-- User-LikedRecipe
+There aren't any one to one relationships in the Recipe App.
 
 #### One-to-many
 - Recipe-Ingredients: each recipe can have multiple ingredients, but each recipe ingredient should belong to only one recipe.
