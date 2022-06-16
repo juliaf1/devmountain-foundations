@@ -12,7 +12,9 @@ const decode = code => {
   let codeArray = code.substring(1).toLowerCase().split('');
 
   codeArray.forEach(letter => {
-    decodedString += ALPHABET[skipCount + ALPHABET.findIndex(char => char === letter)];
+    let decodedLetterIndex = skipCount + ALPHABET.findIndex(char => char === letter);
+    if (decodedLetterIndex >= 26) { decodedLetterIndex -= 26 };
+    decodedString += ALPHABET[decodedLetterIndex];
   });
 
   console.log(decodedString);
