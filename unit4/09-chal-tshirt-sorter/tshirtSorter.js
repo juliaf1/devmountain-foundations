@@ -13,7 +13,17 @@ const shirtSorter = string => {
   return sortedString.join('');
 };
 
+const shirtSorter2 = string => {
+  const splittedString = string.replaceAll(' ', '').split('');
+  let sizes = ['s', 'm', 'l'];
+  let sortedString = [];
+  sizes.forEach(size => {
+    sortedString.push(splittedString.filter(char => char === size));
+  });
+  return sortedString.flat().join('');
+};
 
-console.log(shirtSorter('slsmmsllsmsmlmsls'));
-console.log(shirtSorter('lms'));
-console.log(shirtSorter('smllms'));
+
+console.log(shirtSorter2('slsmmsllsmsmlmsls'));
+console.log(shirtSorter2('lms'));
+console.log(shirtSorter2('smllms'));
