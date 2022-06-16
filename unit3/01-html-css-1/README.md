@@ -10,4 +10,4 @@
 3. In the HTML file, set up your basic structure - doctype, head, body - and create the layout
 
 #### :sparkles: Solution
-I created a profile page with my three favorite things.
+I created a profile page with my three favorite things, using custom fonts, pseudo classes and responsive media queries.
