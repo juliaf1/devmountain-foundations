@@ -15,3 +15,5 @@ Foundations course has 9 units:
 3. `Front-end`: Covers how the web works and front-end theory, HTML, CSS and DOM manipulation to create interactivity using vanilla Javascript.
 
 4. `Back-end`: Covers back-end web theory, APIs and how to build web applications with Node's Express framework, along with an overview of key cryptography concepts.
+
+5. `Data and SQL`: Covers relational database theory, data modeling, SQL, basic Python and NoSQL database.
