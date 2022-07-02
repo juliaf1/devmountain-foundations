@@ -12,8 +12,6 @@ afterAll(async () => {
     await driver.quit();
 });
 
-// tests - crossing off a movie, deleting a movie, or even the notifications that are displayed.
-
 test('able to add a movie to the list', async () => {
     await driver.findElement(By.xpath('//input[@placeholder="Add Movie"]')).sendKeys('Billy Madison');
     await driver.findElement(By.xpath('//button[text()="Add"]')).click();
@@ -39,3 +37,13 @@ test('be able to undo movie cross off', async () => {
     const movieClasses = await movie.getAttribute('class');
     expect(movieClasses.includes('checked')).toBeFalsy();
 });
+
+test('be able to delete a movie', async () => {
+    const deleteButton = await driver.findElement(By.xpath('//span[text()="Billy Madison"]/../button'));
+    await deleteButton.click();
+    const isMoviePresent = await driver.findElements(By.xpath('//span[text()="Billy Madison"]')).length > 0;
+    await driver.sleep(1000);
+    expect(isMoviePresent).toBeFalsy();
+});
+
+// TODO: tests - deleting a movie, the notifications that are displayed
