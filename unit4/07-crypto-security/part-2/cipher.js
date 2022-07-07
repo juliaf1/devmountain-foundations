@@ -3,44 +3,46 @@
 // The number sequence tells which letters need to be swapped to reveal the hidden text
 
 const cipherText = string => {
-    const numberOfLetters = string.length;
-    let cipheredText = string.split('');
-    let cipherSequence = [];
+    const cipherSequence = randomSequence(string.length);
+    const cipheredText = swap(string, cipherSequence);
 
-    for (let i = 0; i < numberOfLetters; i++) {
-        cipherSequence.push(Math.floor(Math.random() * numberOfLetters));
-    };
-    cipherSequence = [...new Set(cipherSequence)];
-
-    for (let i = 0; i < cipherSequence.length; i += 2) {
-        let firstIndex = cipherSequence[i];
-        let secondIndex = cipherSequence[i + 1];
-        if (firstIndex != undefined && secondIndex != undefined) {
-            cipheredText[firstIndex] = string[secondIndex];
-            cipheredText[secondIndex] = string[firstIndex];
-        };
-    };
-
-    return cipheredText.join('') + '-' + cipherSequence.join(',');
+    return cipheredText + '-' + cipherSequence;
 };
 
 const decipherText = cipher => {
     const cipherArray = cipher.split('-');
     const cipheredText = cipherArray[0];
-    const cipherSequence = cipherArray[1].split(',');
-    let decipheredText = cipheredText.split('');
+    const cipherSequence = cipherArray[1];
+
+    return swap(cipheredText, cipherSequence);
+};
+
+const swap = (string, sequence) => {
+    let convertedString = string.split('');
+    let cipherSequence = sequence.split(',');
 
     for (let i = 0; i < cipherSequence.length; i += 2) {
         let firstIndex = cipherSequence[i];
         let secondIndex = cipherSequence[i + 1];
         if (firstIndex != undefined && secondIndex != undefined) {
-            decipheredText[firstIndex] = cipheredText[secondIndex];
-            decipheredText[secondIndex] = cipheredText[firstIndex];
+            convertedString[firstIndex] = string[secondIndex];
+            convertedString[secondIndex] = string[firstIndex];
         };
     };
 
-    return decipheredText.join('');
+    return convertedString.join('');
 };
+
+const randomSequence = totalNumbers => {
+    const sequence = [];
+
+    for (let i = 0; i < totalNumbers; i++) {
+        sequence.push(Math.floor(Math.random() * totalNumbers));
+    };
+
+    return [...new Set(sequence)].join(',');
+}
+
 
 let testString = 'ireallyloveharrypotterlikereally!!!'; // Update your test string here
 
