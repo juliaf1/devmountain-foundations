@@ -1,4 +1,5 @@
-const users = []
+const bcrypt = require('bcryptjs');
+const users = [];
 
 module.exports = {
     login: (req, res) => {
