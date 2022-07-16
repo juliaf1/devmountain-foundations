@@ -71,10 +71,19 @@ const getPastAppointments = (req, res) => {
         .catch(err => console.log(err));
 };
 
+const completeAppointment = (req, res) => {
+    sequelize.query(``)
+        .then(dbRes => {
+            res.status(200).send(dbRes[0]);
+        })
+        .catch(err => console.log(err));
+};
+
 module.exports = {
     getUpcomingAppointments,
     approveAppointment,
     getAllClients,
     getPendingAppointments,
     getPastAppointments,
+    completeAppointment,
 };
