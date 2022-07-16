@@ -51,8 +51,31 @@ const getAllClients = (req, res) => {
         .catch(err => console.log(err));
 };
 
+const getPendingAppointments = (req, res) => {
+    sequelize.query(`select * from cc_appointments where approved = false;`)
+        .then(dbRes => {
+            res.status(200).send(dbRes[0]);
+        })
+        .catch(err => console.log(err));
+};
+
+const getPastAppointments = (req, res) => {
+    sequelize.query(`select a.appt_id, a.date, a.service_type, a.notes, u.first_name, u.last_name 
+    from cc_appointments a
+    join cc_clients c on c.client_id = a.client_id
+    join cc_users u on c.user_id = u.user_id
+    where a.approved = true and a.completed = true
+    order by a.date desc;`)
+        .then(dbRes => {
+            res.status(200).send(dbRes[0]);
+        })
+        .catch(err => console.log(err));
+};
+
 module.exports = {
     getUpcomingAppointments,
     approveAppointment,
-    getAllClients
+    getAllClients,
+    getPendingAppointments,
+    getPastAppointments,
 };
