@@ -223,6 +223,11 @@ const seed = (req, res) => {
         ('Yemen'),
         ('Zambia'),
         ('Zimbabwe');
+
+        insert into cities (name, rating, country_id)
+        values('Arraial do Cabo', 5, 24),
+        ('Buzios', 5, 24),
+        ('Juiz de Fora', 3, 24);
     `).then(() => {
         console.log('DB seeded!');
         res.sendStatus(200);
