@@ -1,4 +1,5 @@
-
+require('dotenv').config();
+const { DATABASE_URI } = proccess.env;
 
 module.exports = {
     seed: (req, res) => {
