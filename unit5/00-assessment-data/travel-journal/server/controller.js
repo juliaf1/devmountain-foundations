@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { DATABASE_URI } = proccess.env;
+const { DATABASE_URI } = process.env;
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize(DATABASE_URI, {
     dialect: 'postgres',
@@ -20,12 +20,12 @@ const seed = (req, res) => {
             name varchar
         );
 
-        create table cities {
+        create table cities (
             city_id serial primary key,
             name varchar,
             rating integer,
             country_id integer
-        };
+        );
 
         insert into countries (name)
         values ('Afghanistan'),
@@ -224,9 +224,9 @@ const seed = (req, res) => {
         ('Zambia'),
         ('Zimbabwe');
     `).then(() => {
-        console.log('DB seeded!')
-        res.sendStatus(200)
-    }).catch(err => console.log('error seeding DB', err))
+        console.log('DB seeded!');
+        res.sendStatus(200);
+    }).catch(err => console.log('error seeding DB', err));
 };
 
 module.exports = {
