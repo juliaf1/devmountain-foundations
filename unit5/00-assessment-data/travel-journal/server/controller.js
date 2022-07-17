@@ -250,7 +250,8 @@ const createCity = (req, res) => {
 const getCities = (req, res) => {
     sequelize.query(`select c.city_id, c.name city, c.rating, cc.country_id, cc.name country
     from cities c
-    join countries cc on cc.country_id = c.country_id;`)
+    join countries cc on cc.country_id = c.country_id
+    order by c.rating desc;`)
         .then(dbRes => {
             res.status(200).send(dbRes[0]);
         })
