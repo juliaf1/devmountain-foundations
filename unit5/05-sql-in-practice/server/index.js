@@ -1,8 +1,10 @@
-require('dotenv').config()
-const express = require('express')
-const app = express()
-const cors = require('cors')
-const {SERVER_PORT} = process.env
+require('dotenv').config();
+
+const express = require('express');
+const app = express();
+const cors = require('cors');
+
+const {SERVER_PORT} = process.env;
 const {
     getAllClients,
     getPendingAppointments,
@@ -11,19 +13,24 @@ const {
     approveAppointment, 
     completeAppointment, 
     deleteAppointment
-} = require('./controller.js')
+} = require('./controller.js');
 
-app.use(express.json())
-app.use(cors())
+const { seed } = require('./seed.js');
+
+app.use(express.json());
+app.use(cors());
+
+// DEV
+app.post('/seed', seed);
 
 // USERS
-// app.get('/clients', getAllClients)
+app.get('/clients', getAllClients);
 
 // APPOINTMENTS
-// app.get('/pending', getPendingAppointments)
-// app.get('/upcoming', getUpcomingAppointments)
-// app.get('/appt', getPastAppointments)
-// app.put('/approve', approveAppointment)
-// app.put('/complete', completeAppointment)
+app.get('/pending', getPendingAppointments)
+app.get('/upcoming', getUpcomingAppointments)
+app.get('/appt', getPastAppointments)
+app.put('/approve', approveAppointment)
+app.put('/complete', completeAppointment)
 
-app.listen(SERVER_PORT, () => console.log(`up on ${SERVER_PORT}`))
+app.listen(SERVER_PORT, () => console.log(`up on ${SERVER_PORT}`));
