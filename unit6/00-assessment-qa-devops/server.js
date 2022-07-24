@@ -7,6 +7,18 @@ const {shuffleArray} = require('./utils');
 
 app.use(express.json());
 app.use(cors());
+
+// include and initialize the rollbar library with your access token
+const Rollbar = require('rollbar');
+const rollbar = new Rollbar({
+  accessToken: '61c358cd7cbc4985a7a11f783739ea31',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+});
+
+// record a generic message and send it to Rollbar
+rollbar.log('Hello world!');
+
 app.use(express.static(path.join(__dirname, './public')));
 app.use('/styles', express.static(path.join(__dirname, './public/index.css')));
 app.use('/js', express.static(path.join(__dirname, './public/index.js')));
@@ -24,6 +36,7 @@ app.use('/js', express.static(path.join(__dirname, './public/index.js')));
 // });
 
 app.get('/api/robots', (req, res) => {
+    rollbar.info('GET - /api/robots');
     try {
         res.status(200).send(botsArr);
     } catch (error) {
