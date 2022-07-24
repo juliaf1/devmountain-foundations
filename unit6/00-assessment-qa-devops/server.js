@@ -1,3 +1,5 @@
+require('dotenv').config();
+const { rollbarToken } = process.env;
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -10,8 +12,9 @@ app.use(cors());
 
 // include and initialize the rollbar library with your access token
 const Rollbar = require('rollbar');
+const { config } = require('dotenv');
 const rollbar = new Rollbar({
-  accessToken: '61c358cd7cbc4985a7a11f783739ea31',
+  accessToken: rollbarToken,
   captureUncaught: true,
   captureUnhandledRejections: true,
 });
@@ -38,8 +41,10 @@ app.use('/js', express.static(path.join(__dirname, './public/index.js')));
 app.get('/api/robots', (req, res) => {
     rollbar.info('GET - /api/robots');
     try {
+        rollbar.log('Bots retrieved sucessfully', { response: botsArr });
         res.status(200).send(botsArr);
     } catch (error) {
+        rollbar.error('Error retrieving bots', { error });
         console.log('ERROR GETTING BOTS', error);
         res.sendStatus(400);
     };
