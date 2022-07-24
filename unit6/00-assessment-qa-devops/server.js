@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { rollbarToken } = process.env;
+const { ROLLBAR_TOKEN } = process.env;
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -12,9 +12,8 @@ app.use(cors());
 
 // include and initialize the rollbar library with your access token
 const Rollbar = require('rollbar');
-const { config } = require('dotenv');
 const rollbar = new Rollbar({
-  accessToken: rollbarToken,
+  accessToken: ROLLBAR_TOKEN,
   captureUncaught: true,
   captureUnhandledRejections: true,
 });
@@ -101,6 +100,8 @@ app.get('/api/player', (req, res) => {
         res.sendStatus(400);
     };
 });
+
+app.use(rollbar.errorHandler());
 
 const port = process.env.PORT || 3000;
 
