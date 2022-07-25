@@ -13,7 +13,6 @@
   "dependencies": {
     "@types/jest": "^27.0.2",
     "@types/selenium-webdriver": "^4.0.16",
-    "chromedriver": "^95.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.17.1",
@@ -24,5 +23,8 @@
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "chromedriver": "^103.0.0"
   }
 }
