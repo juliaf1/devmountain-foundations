@@ -50,18 +50,22 @@ app.get('/api/robots', (req, res) => {
 });
 
 app.get('/api/robots/five', (req, res) => {
+    rollbar.info('GET - /api/robots/five');
     try {
         let shuffled = shuffleArray(bots);
         let choices = shuffled.slice(0, 5);
         let compDuo = shuffled.slice(6, 8);
+        rollbar.log('Five bots retrieved sucessfully', { response: { choices, compDuo } });
         res.status(200).send({choices, compDuo});
     } catch (error) {
+        rollbar.error('Error retrieving five bots', { error });
         console.log('ERROR GETTING FIVE BOTS', error);
         res.sendStatus(400);
     };
 });
 
 app.post('/api/duel', (req, res) => {
+    rollbar.info('GET - /api/duel');
     try {
         // getting the duos from the front end
         let {compDuo, playerDuo} = req.body;
@@ -81,21 +85,27 @@ app.post('/api/duel', (req, res) => {
         // comparing the total health to determine a winner
         if (compHealthAfterAttack > playerHealthAfterAttack) {
             playerRecord.losses++;
+            rollbar.log('Duel concluded', { response: { playerWin: false, playerRecord } });
             res.status(200).send('You lost!');
         } else {
             playerRecord.losses++;
+            rollbar.log('Duel concluded', { response: { playerWin: true, playerRecord } });
             res.status(200).send(';You won!')
         }
     } catch (error) {
+        rollbar.error('Error dueling', { error });
         console.log('ERROR DUELING', error);
         res.sendStatus(400);
     };
 });
 
 app.get('/api/player', (req, res) => {
+    rollbar.info('GET - /api/player');
     try {
+        rollbar.log('Player stats retrieved sucessfully', { response: playerRecord });
         res.status(200).send(playerRecord);
     } catch (error) {
+        rollbar.error('Error getting player stats', { error });
         console.log('ERROR GETTING PLAYER STATS', error);
         res.sendStatus(400);
     };
