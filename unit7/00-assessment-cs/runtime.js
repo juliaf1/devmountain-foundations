@@ -36,23 +36,41 @@ const mediumArray = getSizedArray(1000);
 const largeArray = getSizedArray(10000);
 const extraLargeArray = getSizedArray(100000);
 
+const arrays = { tinyArray, smallArray, mediumArray, largeArray, extraLargeArray };
 
+for (const key in arrays) {
+    console.log(`Results for the ${key}`);
 
-// How long does it take to double every number in a given 
-// array? 
+    perf.start();
+    doublerAppend(arrays[key]);
+    let resultsAppend = perf.stop();
 
-// Try it with first function
-perf.start();                     // Starts timer
-doublerAppend(extraLargeArray);
-let resultsAppend = perf.stop();  // Stops timer and save time results
+    perf.start();
+    doublerInsert(extraLargeArray);
+    let resultsInsert = perf.stop();
 
+    console.log('insert', resultsInsert.preciseWords);
+    console.log('append', resultsAppend.preciseWords);
 
-// Try it with second function
-perf.start();
-doublerInsert(extraLargeArray);
-let resultsInsert = perf.stop();
+    console.log('\n----\n');
+};
 
+// Results for the tinyArray
+// insert 775.143459 ms
+// append 47.292 μs
 
-console.log('Results for the extraLargeArray');
-console.log("insert", resultsInsert.preciseWords);
-console.log("append", resultsAppend.preciseWords);
+// Results for the smallArray
+// insert 766.73225 ms
+// append 12.875 μs
+
+// Results for the mediumArray
+// insert 770.876792 ms
+// append 33.209 μs
+
+// Results for the largeArray
+// insert 767.111041 ms
+// append 281.292 μs
+
+// Results for the extraLargeArray
+// insert 768.228333 ms
+// append 1.902 ms
