@@ -1,37 +1,33 @@
 const perf = require('execution-time')();
 
 
-function doublerAppend(nums){
-
+function doublerAppend(nums) {
     let new_nums = [];
 
-    for (let i=0; i<nums.length; i++){
+    for (let i = 0; i < nums.length; i++) {
         let num = nums[i] * 2;
         new_nums.push(num);
-    }
+    };
+};
 
-}
 
-
-function doublerInsert(nums){
-
+function doublerInsert(nums) {
     let new_nums = [];
 
-    for (let i=0; i<nums.length; i++){
+    for (let i = 0; i < nums.length; i++) {
         let num = nums[i] * 2;
         new_nums.unshift(num);
-    }
+    };
+};
 
-}
 
-
-function getSizedArray(size){
+function getSizedArray(size) {
     let array = [];
-    for (let i=0; i<size; i++){
+    for (let i = 0; i < size; i++) {
         array.push(i);
-    }
-    return array
-}
+    };
+    return array;
+};
 
 
 const tinyArray = getSizedArray(10);
