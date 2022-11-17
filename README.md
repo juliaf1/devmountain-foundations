@@ -17,3 +17,7 @@ Foundations course has 9 units:
 4. `Back-end`: Covers back-end web theory, APIs and how to build web applications with Node's Express framework, along with an overview of key cryptography concepts.
 
 5. `Data and SQL`: Covers relational database theory, data modeling, SQL, basic Python and NoSQL database.
+
+6. `QA & Testing`: Covers QA theory and proccesses, as well as automation tests with Selenium and unit tests with Jest.
+
+7. `Computer Science`: Covers Computer Science theory, computer memory, algorithmic thinking, time and space complexity, and other relevant topics.
